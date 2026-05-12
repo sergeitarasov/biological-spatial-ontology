@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: bspo/releases/2023-05-27/bspo-full.owl
+data-version: bspo/releases/2026-05-12/bspo-full.owl
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
@@ -10,26 +10,33 @@ synonymtypedef: human "synonym typically used in the context of human anatomy" N
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy" NARROW
 default-namespace: spatial
 namespace-id-rule: * BSPO:$sequence(7,0,999999999)$
+idspace: dc http://purl.org/dc/elements/1.1/ 
+idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: skos http://www.w3.org/2004/02/skos/core# 
+idspace: swrl http://www.w3.org/2003/11/swrl# 
+idspace: swrla http://swrl.stanford.edu/ontologies/3.3/swrla.owl# 
+idspace: swrlb http://www.w3.org/2003/11/swrlb# 
+idspace: terms http://purl.org/dc/terms/ 
 remark: based on FBql
 ontology: bspo/bspo-full
-property_value: http://purl.org/dc/elements/1.1/description "An ontology for respresenting spatial concepts, anatomical axes, gradients, regions, planes, sides and surfaces. These concepts can be used at multiple biological scales and in a diversity of taxa, including plants, animals and fungi. The BSPO is used to provide a source of anatomical location descriptors for logically defining anatomical entity classes in anatomy ontologies." xsd:string
-property_value: http://purl.org/dc/elements/1.1/title "Biological Spatial Ontology" xsd:string
-property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/3.0/
+property_value: dc:description "An ontology for respresenting spatial concepts, anatomical axes, gradients, regions, planes, sides and surfaces. These concepts can be used at multiple biological scales and in a diversity of taxa, including plants, animals and fungi. The BSPO is used to provide a source of anatomical location descriptors for logically defining anatomical entity classes in anatomy ontologies." xsd:string
+property_value: dc:title "Biological Spatial Ontology" xsd:string
 property_value: IAO:0000700 CARO:0000000
-property_value: owl:versionInfo "2023-05-27" xsd:string
+property_value: owl:versionInfo "2026-05-12" xsd:string
+property_value: terms:license https://creativecommons.org/licenses/by/3.0/
 
 [Term]
 id: BFO:0000002
 name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
 disjoint_from: BFO:0000003 ! occurrent
-relationship: part_of BFO:0000002 ! continuant
+relationship: part_of BFO:0000002 {all_only="true"} ! continuant
 
 [Term]
 id: BFO:0000003
 name: occurrent
 def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
-relationship: part_of BFO:0000003 ! occurrent
+relationship: part_of BFO:0000003 {all_only="true"} ! occurrent
 
 [Term]
 id: BFO:0000004
@@ -37,7 +44,7 @@ name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-relationship: part_of BFO:0000004 ! independent continuant
+relationship: part_of BFO:0000004 {all_only="true"} ! independent continuant
 
 [Term]
 id: BFO:0000015
@@ -57,20 +64,20 @@ name: realizable entity
 def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
 is_a: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000019 ! quality
-relationship: part_of BFO:0000017 ! realizable entity
+relationship: part_of BFO:0000017 {all_only="true"} ! realizable entity
 
 [Term]
 id: BFO:0000019
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
-relationship: part_of BFO:0000019 ! quality
+relationship: part_of BFO:0000019 {all_only="true"} ! quality
 
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000020 ! specifically dependent continuant
+relationship: part_of BFO:0000020 {all_only="true"} ! specifically dependent continuant
 
 [Term]
 id: BFO:0000023
@@ -1495,6 +1502,310 @@ xref: http://upload.wikimedia.org/wikipedia/commons/3/34/Anatomical_Directions_a
 is_a: BSPO:0000196 ! medial-external axis
 
 [Term]
+id: BSPO:0031002
+name: antero-proximal region
+def: "Anatomical region that overlaps the anterior and proximal regions of a body or body part." []
+is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000077 ! proximal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031003
+name: antero-distal region
+def: "Anatomical region that overlaps the anterior and distal regions of a body or body part." []
+is_a: BSPO:0000071 ! anterior region
+is_a: BSPO:0000078 ! distal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000062 ! distal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031004
+name: postero-proximal region
+def: "Anatomical region that overlaps the posterior and proximal regions of a body or body part." []
+is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000077 ! proximal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031005
+name: postero-distal region
+def: "Anatomical region that overlaps the posterior and distal regions of a body or body part." []
+is_a: BSPO:0000072 ! posterior region
+is_a: BSPO:0000078 ! distal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000062 ! distal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031006
+name: dorso-proximal region
+def: "Anatomical region that overlaps the dorsal and proximal regions of a body or body part." []
+is_a: BSPO:0000077 ! proximal region
+is_a: BSPO:0000079 ! dorsal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000061 ! proximal side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031007
+name: dorso-distal region
+def: "Anatomical region that overlaps the dorsal and distal regions of a body or body part." []
+is_a: BSPO:0000078 ! distal region
+is_a: BSPO:0000079 ! dorsal region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000062 ! distal side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031008
+name: ventro-proximal region
+def: "Anatomical region that overlaps the ventral and proximal regions of a body or body part." []
+is_a: BSPO:0000077 ! proximal region
+is_a: BSPO:0000084 ! ventral region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000061 ! proximal side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031009
+name: ventro-distal region
+def: "Anatomical region that overlaps the ventral and distal regions of a body or body part." []
+is_a: BSPO:0000078 ! distal region
+is_a: BSPO:0000084 ! ventral region
+intersection_of: BSPO:0000070 ! anatomical region
+intersection_of: overlaps BSPO:0000062 ! distal side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031010
+name: antero-proximal margin
+def: "Anatomical margin that is located on the antero-proximal region of the body or body part." []
+is_a: BSPO:0000671 ! anterior margin
+is_a: BSPO:0000677 ! proximal margin
+is_a: BSPO:0031002 ! antero-proximal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031011
+name: antero-distal margin
+def: "Anatomical margin that is located on the antero-distal region of the body or body part." []
+is_a: BSPO:0000671 ! anterior margin
+is_a: BSPO:0000678 ! distal margin
+is_a: BSPO:0031003 ! antero-distal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000062 ! distal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031012
+name: postero-proximal margin
+def: "Anatomical margin that is located on the postero-proximal region of the body or body part." []
+is_a: BSPO:0000672 ! posterior margin
+is_a: BSPO:0000677 ! proximal margin
+is_a: BSPO:0031004 ! postero-proximal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031013
+name: postero-distal margin
+def: "Anatomical margin that is located on the postero-distal region of the body or body part." []
+is_a: BSPO:0000672 ! posterior margin
+is_a: BSPO:0000678 ! distal margin
+is_a: BSPO:0031005 ! postero-distal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000062 ! distal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031014
+name: dorso-proximal margin
+def: "Anatomical margin that is located on the dorso-proximal region of the body or body part." []
+is_a: BSPO:0000677 ! proximal margin
+is_a: BSPO:0000679 ! dorsal margin
+is_a: BSPO:0031006 ! dorso-proximal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000061 ! proximal side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031015
+name: dorso-distal margin
+def: "Anatomical margin that is located on the dorso-distal region of the body or body part." []
+is_a: BSPO:0000678 ! distal margin
+is_a: BSPO:0000679 ! dorsal margin
+is_a: BSPO:0031007 ! dorso-distal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000062 ! distal side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031016
+name: ventro-proximal margin
+def: "Anatomical margin that is located on the ventro-proximal region of the body or body part." []
+is_a: BSPO:0000677 ! proximal margin
+is_a: BSPO:0000684 ! ventral margin
+is_a: BSPO:0031008 ! ventro-proximal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000061 ! proximal side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031017
+name: ventro-distal margin
+def: "Anatomical margin that is located on the ventro-distal region of the body or body part." []
+is_a: BSPO:0000678 ! distal margin
+is_a: BSPO:0000684 ! ventral margin
+is_a: BSPO:0031009 ! ventro-distal region
+intersection_of: BSPO:0000006 ! anatomical margin
+intersection_of: overlaps BSPO:0000062 ! distal side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031018
+name: antero-proximal side
+def: "An anatomical side that overlaps the anterior and proximal sides of a body or body part." []
+is_a: BSPO:0000055 ! anterior side
+is_a: BSPO:0000061 ! proximal side
+is_a: BSPO:0031002 ! antero-proximal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031019
+name: antero-distal side
+def: "An anatomical side that overlaps the anterior and distal sides of a body or body part." []
+is_a: BSPO:0000055 ! anterior side
+is_a: BSPO:0000062 ! distal side
+is_a: BSPO:0031003 ! antero-distal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000055 ! anterior side
+intersection_of: overlaps BSPO:0000062 ! distal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031020
+name: postero-proximal side
+def: "An anatomical side that overlaps the posterior and proximal sides of a body or body part." []
+is_a: BSPO:0000056 ! posterior side
+is_a: BSPO:0000061 ! proximal side
+is_a: BSPO:0031004 ! postero-proximal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031021
+name: postero-distal side
+def: "An anatomical side that overlaps the posterior and distal sides of a body or body part." []
+is_a: BSPO:0000056 ! posterior side
+is_a: BSPO:0000062 ! distal side
+is_a: BSPO:0031005 ! postero-distal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000056 ! posterior side
+intersection_of: overlaps BSPO:0000062 ! distal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031022
+name: dorso-proximal side
+def: "An anatomical side that overlaps the dorsal and proximal sides of a body or body part." []
+is_a: BSPO:0000061 ! proximal side
+is_a: BSPO:0000063 ! dorsal side
+is_a: BSPO:0031006 ! dorso-proximal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031023
+name: dorso-distal side
+def: "An anatomical side that overlaps the dorsal and distal sides of a body or body part." []
+is_a: BSPO:0000062 ! distal side
+is_a: BSPO:0000063 ! dorsal side
+is_a: BSPO:0031007 ! dorso-distal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000062 ! distal side
+intersection_of: overlaps BSPO:0000063 ! dorsal side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031024
+name: ventro-proximal side
+def: "An anatomical side that overlaps the ventral and proximal sides of a body or body part." []
+is_a: BSPO:0000061 ! proximal side
+is_a: BSPO:0000068 ! ventral side
+is_a: BSPO:0031008 ! ventro-proximal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000061 ! proximal side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
+id: BSPO:0031025
+name: ventro-distal side
+def: "An anatomical side that overlaps the ventral and distal sides of a body or body part." []
+is_a: BSPO:0000062 ! distal side
+is_a: BSPO:0000068 ! ventral side
+is_a: BSPO:0031009 ! ventro-distal region
+intersection_of: BSPO:0000054 ! anatomical side
+intersection_of: overlaps BSPO:0000062 ! distal side
+intersection_of: overlaps BSPO:0000068 ! ventral side
+created_by: Sergei Tarasov
+creation_date: 2026-05-12T00:00:00Z
+
+[Term]
 id: CARO:0000000
 name: anatomical entity
 def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex." [CAROC:Brownsville2014]
@@ -1588,7 +1899,7 @@ property_value: IAO:0000111 "curation status specification" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "Better to represent curation as a process with parts and then relate labels to that process (in IAO meeting)" xsd:string
 property_value: IAO:0000117 "PERSON:Bill Bug" xsd:string
-property_value: IAO:0000119 GROUP:OBI:<http://purl.obolibrary.org/obo/obi> xsd:string
+property_value: IAO:0000119 "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>" xsd:string
 property_value: IAO:0000119 "OBI_0000266" xsd:string
 
 [Term]
@@ -1631,7 +1942,7 @@ id: BFO:0000062
 name: preceded by
 def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 subset: ro-eco
-property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
+property_value: dc:source "http://www.obofoundry.org/ro/#OBO_REL:preceded_by" xsd:string
 property_value: IAO:0000111 "preceded by" xsd:string
 property_value: IAO:0000116 "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
 property_value: IAO:0000118 "is preceded by" xsd:string
@@ -1681,10 +1992,10 @@ def: "x is parallel t y iff x and y are lines or planes which when extended inde
 id: BSPO:0020001
 name: in central side of
 def: "X in_central_side Y <=> if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides." [BSPO:cjm]
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6523-4866
 property_value: IAO:0000116 "This was migrated from http://purl.obolibrary.org/obo/uberon/core#in_central_side_of in Uberon." xsd:string
 property_value: seeAlso BSPO:0000059
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern
+property_value: terms:contributor https://orcid.org/0000-0002-6523-4866
 is_a: part_of ! part of
 
 [Typedef]
@@ -1732,7 +2043,7 @@ inverse_of: RO:0000057 ! has participant
 id: RO:0000057
 name: has participant
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
-property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:has_participant xsd:string
+property_value: dc:source "http://www.obofoundry.org/ro/#OBO_REL:has_participant" xsd:string
 property_value: IAO:0000111 "has participant" xsd:string
 property_value: IAO:0000112 "this blood coagulation has participant this blood clot" xsd:string
 property_value: IAO:0000112 "this investigation has participant this investigator" xsd:string
@@ -1954,7 +2265,7 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
 property_value: IAO:0000232 "Note that it would be possible to use the relation to label the relationship between a near infinite number of structures - between the rings of saturn and my left earlobe. The intent is that this is used for parsiomoniously for disambiguation purposes - for example, between siblings in a jointly exhaustive pairwise disjointness hierarchy" xsd:string
 property_value: RO:0001900 RO:0001901
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Part-disjointness-Design-Pattern xsd:anyURI
+property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Part-disjointness-Design-Pattern" xsd:anyURI
 is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
 
@@ -2048,7 +2359,7 @@ def: "c stands in this relationship to p if and only if there exists some p' suc
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "has function in" xsd:string
 property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/reflexivity/
-holds_over_chain: RO:0002215 part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+holds_over_chain: RO:0002215 part_of {RO:0002582="true"}
 is_a: RO:0002328 ! functionally related to
 is_a: RO:0002500 ! causal agent in process
 
@@ -2057,11 +2368,11 @@ id: RO:0002222
 name: temporally related to
 comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
 subset: ro-eco
-property_value: http://purl.org/dc/terms/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Allen%27s_interval_algebra
 property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for relations between occurrents involving the relative timing of their starts and ends." xsd:string
+property_value: terms:source "https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1" xsd:anyURI
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 
@@ -2108,8 +2419,8 @@ def: "p is causally upstream of, positive effect q iff p is casually upstream of
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-6601-2165
 property_value: RO:0004049 RO:0002411
+property_value: terms:creator https://orcid.org/0000-0002-6601-2165
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004047 ! causally upstream of or within, positive effect
 
@@ -2119,8 +2430,8 @@ name: causally upstream of, negative effect
 def: "p is causally upstream of, negative effect q iff p is casually upstream of q, and the execution of p decreases the execution of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-6601-2165
 property_value: RO:0004050 RO:0002411
+property_value: terms:creator https://orcid.org/0000-0002-6601-2165
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
 
@@ -2134,7 +2445,7 @@ property_value: IAO:0000118 "inheres in part of" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
 property_value: RO:0001900 RO:0001901
 property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/reflexivity/
-holds_over_chain: RO:0000052 part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+holds_over_chain: RO:0000052 part_of {RO:0002582="true"}
 is_a: RO:0002502 ! depends on
 transitive_over: part_of ! part of
 
@@ -2177,7 +2488,7 @@ name: part of structure that is capable of
 def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "false" xsd:boolean
-holds_over_chain: part_of RO:0002215 {http://purl.obolibrary.org/obo/RO_0002581="true"}
+holds_over_chain: part_of RO:0002215 {RO:0002581="true"}
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]
@@ -2385,12 +2696,12 @@ name: interacts with
 def: "A relationship that holds between two entities in which the processes executed by the two entities are causally connected." []
 subset: ro-eco
 synonym: "in pairwise interaction with" EXACT []
-property_value: closeMatch http://purl.obolibrary.org/obo/MI_0914 xsd:anyURI
 property_value: IAO:0000116 "Considering relabeling as 'pairwise interacts with'" xsd:anyURI
 property_value: IAO:0000116 "This relation and all sub-relations can be applied to either (1) pairs of entities that are interacting at any moment of time (2) populations or species of entity whose members have the disposition to interact (3) classes whose members have the disposition to interact." xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000232 "Note that this relationship type, and sub-relationship types may be redundant with process terms from other ontologies. For example, the symbiotic relationship hierarchy parallels GO. The relations are provided as a convenient shortcut. Consider using the more expressive processual form to capture your data. In the future, these relations will be linked to their cognate processes through rules." xsd:string
-property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/interaction-relations/ xsd:anyURI
+property_value: seeAlso "http://purl.obolibrary.org/obo/ro/docs/interaction-relations/" xsd:anyURI
+property_value: skos:closeMatch "http://purl.obolibrary.org/obo/MI_0914" xsd:anyURI
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 is_symmetric: true
@@ -2399,11 +2710,11 @@ is_symmetric: true
 id: RO:0002436
 name: molecularly interacts with
 def: "An interaction relationship in which the two partners are molecular entities that directly physically interact with each other for example via a stable binding interaction or a brief interaction during which one modifies the other." []
-property_value: closeMatch http://purl.obolibrary.org/obo/MI_0915 xsd:anyURI
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "binds" xsd:string
 property_value: IAO:0000118 "molecularly binds with" xsd:string
 property_value: seeAlso ECO:0000353
+property_value: skos:closeMatch "http://purl.obolibrary.org/obo/MI_0915" xsd:anyURI
 is_symmetric: true
 is_a: RO:0002434 ! interacts with
 
@@ -2513,7 +2824,7 @@ id: RO:0002563
 name: interaction relation helper property
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29
-property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/interaction-relations/ xsd:anyURI
+property_value: seeAlso "http://purl.obolibrary.org/obo/ro/docs/interaction-relations/" xsd:anyURI
 is_a: RO:0002464 ! helper property (not for use in curation)
 
 [Typedef]
@@ -2743,7 +3054,7 @@ creation_date: 2021-11-08T12:00:00Z
 id: RO:0019000
 name: regulates characteristic
 def: "A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C." []
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
+property_value: terms:contributor https://orcid.org/0000-0002-8688-6599
 domain: BFO:0000015 ! process
 range: PATO:0000001 ! quality
 holds_over_chain: RO:0002211 RO:0019000
@@ -2753,7 +3064,7 @@ is_a: RO:0002410 ! causally related to
 id: RO:0019001
 name: positively regulates characteristic
 def: "A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C." []
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
+property_value: terms:contributor https://orcid.org/0000-0002-8688-6599
 holds_over_chain: RO:0002213 RO:0019001
 is_a: RO:0019000 ! regulates characteristic
 
@@ -2761,7 +3072,7 @@ is_a: RO:0019000 ! regulates characteristic
 id: RO:0019002
 name: negatively regulates characteristic
 def: "A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C." []
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
+property_value: terms:contributor https://orcid.org/0000-0002-8688-6599
 holds_over_chain: RO:0002212 RO:0019001
 holds_over_chain: RO:0002213 RO:0019002
 is_a: RO:0019000 ! regulates characteristic
@@ -2781,7 +3092,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002220
-property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {http://www.w3.org/2000/01/rdf-schema#seeAlso="issuecomment-218584934"}
+property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string {seeAlso="issuecomment-218584934"}
 property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
 property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
 property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
@@ -2817,7 +3128,7 @@ id: anteriormost_part_of
 name: anteriormost part of
 def: "x anteriormost_part_of y iff x part_of y and there is no z which is part_of y and is more anterior than x but not part_of x; x is adjacent to the anterior boundary of y" [https://orcid.org/0000-0003-2699-3066]
 xref: BSPO:0030004
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2699-3066
+property_value: terms:contributor https://orcid.org/0000-0003-2699-3066
 is_a: in_anterior_side_of ! in anterior side of
 
 [Typedef]
@@ -2877,7 +3188,7 @@ id: dorsalmost_part_of
 name: dorsalmost part of
 def: "x dorsalmost_part_of y iff x part_of y and there is no z which is part_of y and is more dorsal than x but not part_of x; x is adjacent to the dorsal boundary of y" [https://orcid.org/0000-0003-2699-3066]
 xref: BSPO:0030003
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2699-3066
+property_value: terms:contributor https://orcid.org/0000-0003-2699-3066
 is_a: in_dorsal_side_of ! in dorsal side of
 
 [Typedef]
@@ -3051,7 +3362,7 @@ name: in lateral side of
 def: "X in lateral side of Y <=> if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure" [UBERON:cjm]
 xref: BSPO:0000126
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/2453
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern" xsd:anyURI
 is_a: part_of ! part of
 disjoint_from: BSPO:0020001 ! in central side of
 
@@ -3061,7 +3372,7 @@ name: in left side of
 def: "X in left side of Y <=> if Y is subdivided into two left and right portions, X is part of the left portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000120
 xref: NCIT:C25229
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern" xsd:anyURI
 is_a: in_lateral_side_of ! in lateral side of
 disjoint_from: in_right_side_of ! in right side of
 
@@ -3070,7 +3381,7 @@ id: in_medial_side_of
 name: in medial side of
 def: "X medial side of Y <=> if Y is subdivided into two medial and lateral portions, X is part of the medial portion." [https://orcid.org/0000-0003-2699-3066]
 xref: BSPO:0030006
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2699-3066
+property_value: terms:contributor https://orcid.org/0000-0003-2699-3066
 is_a: part_of ! part of
 
 [Typedef]
@@ -3093,7 +3404,7 @@ name: in right side of
 def: "X in right side of Y <=> if Y is subdivided into two left and right portions, X is part of the right portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000121
 xref: NCIT:C25228
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern" xsd:anyURI
 is_a: in_lateral_side_of ! in lateral side of
 
 [Typedef]
@@ -3131,7 +3442,7 @@ id: lateralmost_part_of
 name: lateralmost part of
 def: "x lateralmost_part_of y iff x part_of y and there is no z which is part_of y and is more lateral than x but not part_of x; x is adjacent to the lateral boundary of y" [https://orcid.org/0000-0003-2699-3066]
 xref: BSPO:0030005
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2699-3066
+property_value: terms:contributor https://orcid.org/0000-0003-2699-3066
 is_a: in_lateral_side_of ! in lateral side of
 
 [Typedef]
@@ -3147,7 +3458,7 @@ id: medialmost_part_of
 name: medialmost part of
 def: "x medialmost_part_of y iff x part_of y and there is no z which is part_of y and is more medial than x but not part_of x; x is adjacent to the medial boundary of y" [https://orcid.org/0000-0003-2699-3066]
 xref: BSPO:0030007
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2699-3066
+property_value: terms:contributor https://orcid.org/0000-0003-2699-3066
 is_a: in_medial_side_of ! in medial side of
 
 [Typedef]
@@ -3200,7 +3511,7 @@ xref: RO:0002131
 property_value: IAO:0000114 IAO:0000125
 property_value: RO:0001900 RO:0001901
 holds_over_chain: has_part overlaps
-holds_over_chain: has_part part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+holds_over_chain: has_part part_of {RO:0002582="true"}
 holds_over_chain: part_of part_of
 is_symmetric: true
 is_a: RO:0002323 ! mereotopologically related to
@@ -3234,7 +3545,7 @@ property_value: RO:0040042 BFO:0000020
 property_value: RO:0040042 BFO:0000031
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
-property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
+property_value: seeAlso "http://www.obofoundry.org/ro/#OBO_REL:part_of" xsd:string
 is_transitive: true
 is_a: overlaps ! overlaps
 inverse_of: has_part ! has part
