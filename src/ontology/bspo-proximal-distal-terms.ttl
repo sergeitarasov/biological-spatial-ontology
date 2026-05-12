@@ -1,0 +1,473 @@
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo:      <http://purl.obolibrary.org/obo/> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+
+# <http://purl.obolibrary.org/obo/bspo/bspo-proximal-distal-terms.owl>
+#     a owl:Ontology .
+
+<http://purl.obolibrary.org/obo/bspo/bspo-proximal-distal-terms.owl>
+    a owl:Ontology ;
+    owl:imports <http://purl.obolibrary.org/obo/bspo.owl> .
+
+########################################
+# REGIONS
+# parent IRIs used:
+#   BSPO_0000070 anatomical region
+#   BSPO_0000071 anterior region
+#   BSPO_0000072 posterior region
+#   BSPO_0000077 proximal region
+#   BSPO_0000078 distal region
+#   BSPO_0000079 dorsal region
+#   BSPO_0000084 ventral region
+#   BSPO_0000055 anterior side  (used in overlaps)
+#   BSPO_0000056 posterior side (used in overlaps)
+#   BSPO_0000061 proximal side  (used in overlaps)
+#   BSPO_0000062 distal side    (used in overlaps)
+#   BSPO_0000063 dorsal side    (used in overlaps)
+#   BSPO_0000068 ventral side   (used in overlaps)
+#   RO_0002131   overlaps
+########################################
+
+<http://purl.obolibrary.org/obo/_XXX_0031002>
+    a owl:Class ;
+    rdfs:label "antero-proximal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031002" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the anterior and proximal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000071 ;
+    rdfs:subClassOf obo:BSPO_0000077 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031003>
+    a owl:Class ;
+    rdfs:label "antero-distal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031003" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the anterior and distal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000071 ;
+    rdfs:subClassOf obo:BSPO_0000078 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031004>
+    a owl:Class ;
+    rdfs:label "postero-proximal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031004" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the posterior and proximal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000072 ;
+    rdfs:subClassOf obo:BSPO_0000077 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031005>
+    a owl:Class ;
+    rdfs:label "postero-distal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031005" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the posterior and distal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000072 ;
+    rdfs:subClassOf obo:BSPO_0000078 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031006>
+    a owl:Class ;
+    rdfs:label "dorso-proximal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031006" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the dorsal and proximal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000079 ;
+    rdfs:subClassOf obo:BSPO_0000077 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031007>
+    a owl:Class ;
+    rdfs:label "dorso-distal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031007" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the dorsal and distal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000079 ;
+    rdfs:subClassOf obo:BSPO_0000078 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031008>
+    a owl:Class ;
+    rdfs:label "ventro-proximal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031008" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the ventral and proximal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000084 ;
+    rdfs:subClassOf obo:BSPO_0000077 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031009>
+    a owl:Class ;
+    rdfs:label "ventro-distal region"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031009" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical region that overlaps the ventral and distal regions of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000070
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000084 ;
+    rdfs:subClassOf obo:BSPO_0000078 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+########################################
+# MARGINS
+# parent IRIs used:
+#   BSPO_0000006 anatomical margin
+#   BSPO_0000671 anterior margin
+#   BSPO_0000672 posterior margin
+#   BSPO_0000677 proximal margin
+#   BSPO_0000678 distal margin
+#   BSPO_0000679 dorsal margin
+#   BSPO_0000684 ventral margin
+#   _XXX_003100X compound region defined above (SubClassOf)
+########################################
+
+<http://purl.obolibrary.org/obo/_XXX_0031010>
+    a owl:Class ;
+    rdfs:label "antero-proximal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031010" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the antero-proximal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031002> ;
+    rdfs:subClassOf obo:BSPO_0000671 ;
+    rdfs:subClassOf obo:BSPO_0000677 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031011>
+    a owl:Class ;
+    rdfs:label "antero-distal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031011" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the antero-distal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031003> ;
+    rdfs:subClassOf obo:BSPO_0000671 ;
+    rdfs:subClassOf obo:BSPO_0000678 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031012>
+    a owl:Class ;
+    rdfs:label "postero-proximal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031012" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the postero-proximal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031004> ;
+    rdfs:subClassOf obo:BSPO_0000672 ;
+    rdfs:subClassOf obo:BSPO_0000677 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031013>
+    a owl:Class ;
+    rdfs:label "postero-distal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031013" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the postero-distal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031005> ;
+    rdfs:subClassOf obo:BSPO_0000672 ;
+    rdfs:subClassOf obo:BSPO_0000678 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031014>
+    a owl:Class ;
+    rdfs:label "dorso-proximal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031014" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the dorso-proximal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031006> ;
+    rdfs:subClassOf obo:BSPO_0000679 ;
+    rdfs:subClassOf obo:BSPO_0000677 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031015>
+    a owl:Class ;
+    rdfs:label "dorso-distal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031015" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the dorso-distal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031007> ;
+    rdfs:subClassOf obo:BSPO_0000679 ;
+    rdfs:subClassOf obo:BSPO_0000678 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031016>
+    a owl:Class ;
+    rdfs:label "ventro-proximal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031016" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the ventro-proximal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031008> ;
+    rdfs:subClassOf obo:BSPO_0000684 ;
+    rdfs:subClassOf obo:BSPO_0000677 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031017>
+    a owl:Class ;
+    rdfs:label "ventro-distal margin"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031017" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "Anatomical margin that is located on the ventro-distal region of the body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000006
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/_XXX_0031009> ;
+    rdfs:subClassOf obo:BSPO_0000684 ;
+    rdfs:subClassOf obo:BSPO_0000678 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+########################################
+# SIDES
+# parent IRIs used:
+#   BSPO_0000054 anatomical side
+#   BSPO_0000055 anterior side
+#   BSPO_0000056 posterior side
+#   BSPO_0000061 proximal side
+#   BSPO_0000062 distal side
+#   BSPO_0000063 dorsal side
+#   BSPO_0000068 ventral side
+########################################
+
+<http://purl.obolibrary.org/obo/_XXX_0031018>
+    a owl:Class ;
+    rdfs:label "antero-proximal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031018" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the anterior and proximal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000055 ;
+    rdfs:subClassOf obo:BSPO_0000061 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031019>
+    a owl:Class ;
+    rdfs:label "antero-distal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031019" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the anterior and distal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000055 ;
+    rdfs:subClassOf obo:BSPO_0000062 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000055 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031020>
+    a owl:Class ;
+    rdfs:label "postero-proximal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031020" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the posterior and proximal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000056 ;
+    rdfs:subClassOf obo:BSPO_0000061 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031021>
+    a owl:Class ;
+    rdfs:label "postero-distal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031021" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the posterior and distal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000056 ;
+    rdfs:subClassOf obo:BSPO_0000062 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000056 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031022>
+    a owl:Class ;
+    rdfs:label "dorso-proximal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031022" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the dorsal and proximal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000063 ;
+    rdfs:subClassOf obo:BSPO_0000061 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031023>
+    a owl:Class ;
+    rdfs:label "dorso-distal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031023" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the dorsal and distal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000063 ;
+    rdfs:subClassOf obo:BSPO_0000062 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000063 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031024>
+    a owl:Class ;
+    rdfs:label "ventro-proximal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031024" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the ventral and proximal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000068 ;
+    rdfs:subClassOf obo:BSPO_0000061 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000061 ] .
+
+<http://purl.obolibrary.org/obo/_XXX_0031025>
+    a owl:Class ;
+    rdfs:label "ventro-distal side"^^xsd:string ;
+    oboInOwl:id "_XXX_:0031025" ;
+    oboInOwl:hasOBONamespace "spatial" ;
+    obo:IAO_0000115 "An anatomical side that overlaps the ventral and distal sides of a body or body part." ;
+    oboInOwl:created_by "Sergei Tarasov" ;
+    oboInOwl:creation_date "2026-05-12T00:00:00Z"^^xsd:dateTime ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BSPO_0000054
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ]
+        [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] ) ] ;
+    rdfs:subClassOf obo:BSPO_0000068 ;
+    rdfs:subClassOf obo:BSPO_0000062 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000068 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:RO_0002131 ; owl:someValuesFrom obo:BSPO_0000062 ] .

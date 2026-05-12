@@ -1,41 +1,115 @@
-Prefix: idrange:=<http://purl.obolibrary.org/obo/bspo/idrange/>
-Prefix: allocatedto:=<http://purl.obolibrary.org/obo/IAO_0000597>
-Prefix: iddigits:=<http://purl.obolibrary.org/obo/IAO_0000596>
-Prefix: idprefix:=<http://purl.obolibrary.org/obo/IAO_0000599>
-Prefix: idsfor:=<http://purl.obolibrary.org/obo/IAO_0000598>
+Prefix: allocatedto: <http://purl.obolibrary.org/obo/IAO_0000597>
+Prefix: iddigits: <http://purl.obolibrary.org/obo/IAO_0000596>
+Prefix: idprefix: <http://purl.obolibrary.org/obo/IAO_0000599>
+Prefix: idrange: <http://purl.obolibrary.org/obo/bspo/idrange/>
+Prefix: idsfor: <http://purl.obolibrary.org/obo/IAO_0000598>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: : <http://purl.obolibrary.org/obo/bspo/bspo-idranges.owl>
+
+
 
 Ontology: <http://purl.obolibrary.org/obo/bspo/bspo-idranges.owl>
-  Annotations: idprefix: "http://purl.obolibrary.org/obo/BSPO_", iddigits: 7, idsfor: "BSPO"
 
-annotationproperty: allocatedto:
-AnnotationProperty: idprefix:
-AnnotationProperty: iddigits:
-AnnotationProperty: idsfor:
 
-Datatype: idrange:1
-Annotations: allocatedto: "Wasila Dahdul"
-EquivalentTo: xsd:integer[> 200 , <= 1099]
+Annotations: 
+    <http://purl.obolibrary.org/obo/IAO_0000596> 7,
+    <http://purl.obolibrary.org/obo/IAO_0000598> "BSPO",
+    <http://purl.obolibrary.org/obo/IAO_0000599> "http://purl.obolibrary.org/obo/BSPO_"
 
-Datatype: idrange:2
-Annotations: allocatedto: "David Osumi-Sutherland"
-EquivalentTo: xsd:integer[> 5001 , <= 10000]
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000596>
 
-Datatype: idrange:3
-Annotations: allocatedto: "Melissa Haendel"
-EquivalentTo: xsd:integer[> 10001 , <= 15000]
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000597>
 
-Datatype: idrange:4
-Annotations: allocatedto: "Chris Mungall"
-EquivalentTo: xsd:integer[> 15001 , <= 20000]
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000598>
 
-Datatype: idrange:5
-Annotations: allocatedto: "Anita Caron"
-EquivalentTo: xsd:integer[> 20001 , <= 20999]
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000599>
 
-Datatype: idrange:6
-Annotations: allocatedto: "Meghan Balk"
-EquivalentTo: xsd:integer[> 30001 , <= 30999]
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/1>
 
-Datatype: idrange:7
-Annotations: allocatedto: "Jim Balhoff"
-EquivalentTo: xsd:integer[> 1099 , <= 1399]
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Wasila Dahdul"
+    
+    EquivalentTo: 
+        xsd:integer[> 200 , <= 1099]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/2>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "David Osumi-Sutherland"
+    
+    EquivalentTo: 
+        xsd:integer[> 5001 , <= 10000]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/3>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Melissa Haendel"
+    
+    EquivalentTo: 
+        xsd:integer[> 10001 , <= 15000]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/4>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Chris Mungall"
+    
+    EquivalentTo: 
+        xsd:integer[> 15001 , <= 20000]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/5>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Anita Caron"
+    
+    EquivalentTo: 
+        xsd:integer[> 20001 , <= 20999]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/6>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Meghan Balk"
+    
+    EquivalentTo: 
+        xsd:integer[> 30001 , <= 30999]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/7>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Jim Balhoff"
+    
+    EquivalentTo: 
+        xsd:integer[> 1099 , <= 1399]
+    
+    
+Datatype: <http://purl.obolibrary.org/obo/bspo/idrange/8>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000597> "Sergei Tarasov"
+    
+    EquivalentTo: 
+        xsd:integer[> 31001 , <= 31999]
+    
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
