@@ -5,12 +5,12 @@
 @prefix obo:      <http://purl.obolibrary.org/obo/> .
 @prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
 
-# <http://purl.obolibrary.org/obo/bspo/bspo-proximal-distal-terms.owl>
-#     a owl:Ontology .
-
 <http://purl.obolibrary.org/obo/bspo/bspo-proximal-distal-terms.owl>
-    a owl:Ontology ;
-    owl:imports <http://purl.obolibrary.org/obo/bspo.owl> .
+    a owl:Ontology .
+
+# <http://purl.obolibrary.org/obo/bspo/bspo-proximal-distal-terms.owl>
+#     a owl:Ontology ;
+#     owl:imports <http://purl.obolibrary.org/obo/bspo.owl> .
 
 ########################################
 # REGIONS
